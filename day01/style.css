@@ -44,8 +44,13 @@ body {
 }
 
 #button {
-  background-color: blue;
+  background-color: steelblue;
   color: #fff;
   padding: 5px 10px;
   border-radius: 2px;
+  cursor: pointer;
+}
+
+#button.stop-color {
+  background-color: tomato;
 }
