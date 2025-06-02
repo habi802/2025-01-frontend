@@ -17,6 +17,10 @@
     let intervalObj = null;
     $prgStartBtn.addEventListener('click', () => {
       $progressBar.value = 0;
+      if (intervalObj) {
+        clearInterval(intervalObj);
+        value = 0;
+      }
 
       intervalObj = setInterval(() => {
         if (value >= 100) {
