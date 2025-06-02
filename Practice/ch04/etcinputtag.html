@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기타 인풋 타입</title>
+</head>
+<body>
+  <form action="#">
+    <div>
+      <label>one-file: <input type="file"></label>
+    </div>
+    <div>
+      <label>one-file(이미지): <input type="file" accept="image/*"></label>
+    </div>
+    <div>
+      <label>multiple-file(이미지): <input type="file" multiple accept="image/*"></label>
+    </div>
+    <div><input type="hidden" name="name" value="홍길동"></div>
+    <!-- pattern: 정규 표현식 사용 -->
+    <div><label>M: <input type="tel" name="phone" pattern="010-[0-9]{4}-[0-9]{4}" required autofocus></label></div>
+    <div><label>email: <input type="email" name="email" value="aaa@aaa.com" readonly></label></div>
+    <div><label>email: <input type="email" name="email" value="bbb@bbb.com" disabled></label></div>
+    <div>
+      <input type="submit" value="전송">
+    </div>
+  </form>
+</body>
+</html>

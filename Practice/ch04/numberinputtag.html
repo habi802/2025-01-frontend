@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>숫자 관련 인풋 타입</title>
+</head>
+<body>
+  <!-- 유효성 검사(validation) -->
+  <form action="#">
+    <div>
+      <label>number: <input type="number" name="age" min="0" max="200"></label>
+    </div>
+
+    <div>
+      <label>range: <input type="range" name="price" min="20" max="80" step="5">
+        <span id="range_display">0</span>
+      </label>
+    </div>
+
+    <div>
+      <label><input type="date" name="birth_date"></label>
+    </div>
+    
+    <div>
+      <!-- '2025-10-10T14:12:12' -->
+      <label>datetime: <input type="datetime-local" name="birth_datetime" min="2025-06-02T10:10:10"></label>
+    </div>
+
+    <div>
+      <label>time: <input type="time" name="birth_time"></label>
+    </div>
+
+    <div>
+      <label>week: <input type="week" name="birth_week"></label>
+    </div>
+
+    <div>
+      <input type="submit" value="확인">
+    </div>
+  </form>
+  <script>
+    const $range = document.querySelector('input[type="range"]');
+    const $rangeDisplay = document.querySelector('#range_display');
+    
+    const $date = document.querySelector('input[type="date"][name="birth_date"]');
+    const $datetime = document.querySelector('input[type="datetime-local"]');
+    $datetime.value = '2025-10-10T14:12:12';
+    
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const year = tomorrow.getFullYear();
+    const mon = String(tomorrow.getMonth() + 1).padStart(2, '0');
+    const day = String(tomorrow.getDate()).padStart(2, '0');
+    const nowDate = `${year}-${mon}-${day}`;
+    $date.value = nowDate;
+    $date.setAttribute('min', nowDate);
+    $date.setAttribute('max', '2025-06-05');
+    console.log('nowDate: ', nowDate);
+
+    $rangeDisplay.innerText = $range.value;
+
+    $range.addEventListener('mousemove', function(e) {
+      $rangeDisplay.innerText = e.target.value;
+    });
+  </script>
+</body>
+</html>

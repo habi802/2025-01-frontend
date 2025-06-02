@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>정도를 표현하는 태그</title>
+</head>
+<body>
+  <progress id="progressBar" max="100" value="70">70%</progress>
+  <button id="prgStartBtn" type="button">시작</button>
+
+  <script>
+    const $progressBar = document.querySelector('#progressBar');
+    const $prgStartBtn = document.querySelector('#prgStartBtn');
+
+    let value = 0;
+    let intervalObj = null;
+    $prgStartBtn.addEventListener('click', () => {
+      $progressBar.value = 0;
+
+      intervalObj = setInterval(() => {
+        if (value >= 100) {
+          clearInterval(intervalObj);
+          value = 0;
+          return;
+        } else {
+          $progressBar.value = ++value;
+        }
+      }, 10);
+    });
+  </script>
+</body>
+</html>
