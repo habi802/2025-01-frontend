@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>radio-checked</title>
+  <style>
+    /* 인접 선택자, 가상 클래스 */
+    #signup input:checked + label { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>radio-checked.html</h1>
+  <form action="#" id="signup">
+    <div><input type="radio" name="typ" value="1" id="typ_01" checked>
+      <label for="typ_01">기본형</label>
+    </div>
+    <div><input type="radio" name="typ" value="2" id="typ_02">
+      <label for="typ_02">가족형</label>
+    </div>
+    <div><input type="radio" name="typ" value="3" id="typ_03">
+      <label for="typ_03">고급형</label>
+    </div>
+  </form>
+</body>
+</html>

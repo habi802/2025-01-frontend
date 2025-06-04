@@ -1,0 +1,17 @@
+.outer li { color: olivedrab; } /* 하위 선택자 (descendant selector) */
+.outer > li { color: dodgerblue; } /* 자식 선택자 (child selector) */
+.outer > li ul { text-decoration: underline; }
+
+.starter ~ li { font-style: italic; }
+
+ol li:first-child, ol li:last-child { color: yellowgreen; }
+/* not 가상 선택자 */
+.outer > :not(:last-child) { background-color: antiquewhite; }
+
+ul:not(.outer) li { font-weight: bold; }
+
+ol :nth-child(3) { font-weight: bold; color: deeppink }
+
+/* ol :nth-child(even) { background-color: beige; } */
+ol :nth-child(3n) { background-color: beige; }
+ol :nth-child(odd) { background-color: cadetblue; }

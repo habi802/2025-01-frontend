@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .parent :first-child { background-color: lightgreen; }
+    .parent p:first-of-type { background-color: steelblue; }
+
+    .parent2 :first-of-type { background-color: steelblue; }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <span class="box box1">span</span>
+    <p class="box box1">p</p>
+    <span class="box box1">span</span>
+    <p class="box box1">p</p>
+    <span class="box box1">span</span>
+    <p class="box box1">p</p>
+    <p class="box box1">p</p>
+    <p class="box box1">p</p>
+  </div>
+  <hr>
+  <div class="parent2">
+      <span class="box box1">span</span>
+      <p class="box box1">p</p>
+      <span class="box box1">span</span>
+      <p class="box box1">p</p>
+      <span class="box box1">span</span>
+      <p class="box box1">p</p>
+      <p class="box box1">p</p>
+      <p class="box box1">p</p>
+  </div>
+</body>
+</html>

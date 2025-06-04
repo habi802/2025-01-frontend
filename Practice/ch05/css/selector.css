@@ -1,0 +1,11 @@
+span { color: plum; }
+span { color: pink; }
+
+div { color: olivedrab; }
+#red { color: red; }
+div.blue { color: brown; }
+div.blue.dark { color: greenyellow; }
+.blue.dark { color: grey; }
+.blue { color: slateblue; }
+
+span, .dark, #red { text-decoration: underline;}
