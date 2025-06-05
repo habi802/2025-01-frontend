@@ -1,0 +1,9 @@
+ul > li {
+  background-color: sandybrown;
+  display: inline-block; 
+}
+ul > :not(:last-child) {
+  margin-right: 2em;
+}
+
+ul { background-color: blue; }

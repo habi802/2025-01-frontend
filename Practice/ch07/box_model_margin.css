@@ -1,0 +1,5 @@
+span { background-color: slateblue; }
+.container div { background-color: coral; }
+.container { background-color: #fff; }
+
+span, .container div { margin: 20px; }

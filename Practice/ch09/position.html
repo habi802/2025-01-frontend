@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position</title>
+  <style>
+    div {
+      width: 100px; height: 100px;
+      background-color: aquamarine;
+      margin-top: 20px;
+    }
+
+    .static { position: static; left: 20px; }
+    .relative { position: relative; left: 20px; top: 20px; }
+    /*
+      absolute는 부모를 찾습니다. static이 아닌 부모를 먼저 찾는다.
+      부모 중 static이 아닌 부모가 없다면 body가 부모가 된다.
+      부모 기준에서 위치 조정이 된다.
+    */
+    .absolute { position: absolute; background-color: brown; top: 10px;}
+    .absolute2 { position: absolute; left: 160px; top: 10px; }
+    .absolute3 {
+      position: absolute;
+      width: 30px; height: 30px; background-color: bisque; 
+      font-size: 0.5rem;
+      left: 10px; top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="static">static-div</div>
+  <div class="relative">relative-div</div>
+  <div class="absolute">absolute-div</div>
+  <hr>
+  <div class="static">
+    static-div
+    <div class="absolute2">
+      absolute-div2
+    </div>
+  </div>
+  <hr>
+  <div class="relative">
+    relative-div
+    <div class="absolute3">
+      absolute-div3
+    </div>
+  </div>
+</body>
+</html>
