@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>z-index</title>
+  <style>
+    body { margin: 0; }
+    div {
+      width: 300px; height: 200px; line-height: 80px;
+      position: fixed; 
+      top: calc(50% - 40px);
+      left: calc(50% - 150px);
+    }
+    .red { z-index: 1; background-color: red; left: 30px; top: 30px; }
+    .blue { z-index: 2; background-color: blue; left: 100px; top: 100px; }
+    .yellow { z-index: 0; background-color: yellow; left: 200px; top: 200px; }
+  </style>
+</head>
+<body>
+  <div class="red"></div>
+  <div class="blue"></div>
+  <div class="yellow"></div>
+</body>
+</html>
