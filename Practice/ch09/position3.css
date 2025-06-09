@@ -1,0 +1,32 @@
+* { margin: 0; padding: 0; }
+header {
+  position: fixed; background-color: grey;
+  top: 0; left: 0; right: 0; height: 80px;
+  color: #fff;
+  display: flex; justify-content: center; align-items: center;
+  z-index: 10;
+}
+
+header h1 { font-size: 1.7em; }
+
+main {
+  position: relative; display: flex; justify-content: space-between;
+  height: 300vh; margin-top: 90px; align-items: start;
+  background-color: blue;
+}
+
+.one { width: 60%; height: 100vh; }
+.one > img { width: 100%; display: block; }
+
+.two {
+  background-color: rgb(179, 206, 230);
+  width: 40%; overflow: auto; position: sticky;
+  height: 10vh; top: 0;
+  padding: 70px 0 0 12px;
+  text-align: center;
+}
+
+.three {
+  position: sticky; top: 0; background-color: beige;
+  height: 200px; padding-top: 100px;
+}
