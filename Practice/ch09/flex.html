@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body { margin: 0; }
+
+    header {
+      position: fixed;
+      background-color: blue;
+      top: 0; left: 0; right: 0;
+      height: 90px;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      gap: 12px;
+      z-index: 10;
+    }
+    header > div {
+      background-color: yellow;
+      padding: 10px;
+      text-align: center;
+    }
+    header > div:first-child { flex-grow: 1; }
+    header > div:last-child { flex-grow: 4; }
+
+    main {
+      display: flex;
+      justify-content: center;
+      height: 150vh;
+      align-items: center;
+    }
+    main #content {
+      background-color: steelblue;
+      padding: 150px;
+      text-align: center;
+    }
+
+    footer {
+      position: fixed;
+      background-color: red;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <header>
+      <div>로고</div>
+      <div>메뉴들</div>
+    </header>
+    <main>
+      <div id="content">
+        부모의 한가운데 배치
+      </div>
+    </main>
+    <footer>
+
+    </footer>
+  </div>
+</body>
+</html>
