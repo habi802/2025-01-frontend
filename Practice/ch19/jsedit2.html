@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>jsedit2.html</h1>
+  <a href="https://www.naver.com" target="_blank" kkk="크크크">웹 사이트 바로가기</a>
+  <hr>
+  <input type="text" name="message" value="Hello World!">
+  <br>
+  <input type="checkbox" id="checkbox" name="toggle" checked>
+  <label for="checkbox">체크 박스</label>
+  <script>
+    const $hyperLink = document.querySelector('a');
+    console.log('$hyperLink.href:', $hyperLink.href);
+    console.log('$hyperLink.getAttribute("href"):', $hyperLink.getAttribute("href"));
+
+    console.log('$hyperLink.kkk:', $hyperLink.kkk);
+    console.log('$hyperLink.getAttribute("kkk"):', $hyperLink.getAttribute("kkk"));
+    $hyperLink.setAttribute('href', 'https://www.yalco.kr');
+
+    const $message = document.querySelector('input[name="message"]');
+    console.log('$message:', $message);
+    console.log('$message.value:', $message.value);
+    console.log('$message.getAttribute("value"):', $message.getAttribute('value'));
+
+    $message.value = "헬로우 월드!";
+    $message.setAttribute('value', '크크크');
+    console.log('$message.value:', $message.value);
+
+    $checkbox = document.querySelector('#checkbox');
+    console.log('$checkbox.checked:', $checkbox.checked);
+    $checkbox.checked = false;
+  </script>
+</body>
+</html>
