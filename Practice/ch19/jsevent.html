@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body { padding: 16px 32px; font-size: 1.2em; }
+    button, input[type="text"] { padding: 0.5em 1em; font-size: 1.2em; }
+    #click_position {
+      display: inline-block;
+      margin: 24px 0;
+      width: 400px;
+      height: 240px;
+      background-color: lightblue;
+      line-height: 240px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>jsevent.html</h1>
+  <button id="my_button">이벤트를 부여하세요.</button>
+  <br>
+  <div id="click_position">클릭 전</div>
+  <br>
+  <input type="text" id="my_input">
+  <div id="view"></div>
+
+  <script>
+    const $myButton = document.querySelector('#my_button');
+    function clickBtn() { // 호출되었을 때 하고 싶은 작업을 작성
+      
+    }
+
+    // (1) '문자열-이벤트 이름'
+    // (2) 콜백함수 >> 함수의 주소값을 보낸다.
+    $myButton.addEventListener('click', clickBtn);
+
+    // 익명 함수
+    $myButton.addEventListener('mouseenter', function() {
+      
+    });
+
+    // 화살표 함수 (화살표 함수는 원래 익명 함수)
+    $myButton.addEventListener('mouseleave', () => {
+      
+    });
+
+    // 클릭 전 div 선택
+    const $clickPosition = document.querySelector('#click_position');
+    // Arrow Function 생략 가능: 중괄호, 리턴(중괄호가 없을 때만), 소괄호
+    $clickPosition.addEventListener('click', e => {
+      const text = `x: ${e.clientX}, y: ${e.clientY}`;
+      e.target.textContent = text;
+    });
+
+    // input[type="text"] 선택
+    const $myInput = document.querySelector('#my_input');
+    $myInput.addEventListener('focus', e => {
+      e.target.setAttribute('placeHolder', '포커스된 상태')
+    });
+    $myInput.addEventListener('blur', e => {
+      e.target.setAttribute('placeHolder', '')
+    });
+    const $view = document.querySelector('#view');
+    $myInput.addEventListener('keyup', e => {
+      $view.textContent = e.target.value;
+    });
+  </script>
+</body>
+</html>

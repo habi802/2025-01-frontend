@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./jsselect.css">
+  <title>Document</title>
+</head>
+<body>
+  <h1>jsremove.html</h1>
+  <section class="plant">
+    <h2 id="vegetable_title">채소</h2>
+    <ul>
+      <li class="organic">당근</li>
+      <li>오이</li>
+      <li>상추</li>
+      <li>가지</li>
+      <li class="hidden kkk vvv">양파</li>
+    </ul>
+  </section>
+  <section id="sweets" class="plant">
+    <h2>과일</h2>
+    <ul>
+      <li>사과</li>
+      <li>딸기</li>
+      <li>포도</li>
+    </ul>
+  </section>
+  <section id="meat">
+    <h2>고기</h2>
+    <ul>
+      <li class="soldout">소고기</li>
+      <li>돼지고기</li>
+      <li class="soldout">양고기</li>
+    </ul>
+  </section>
+  <script>
+    const $fruit_ul = document.querySelector('#sweets ul');
+
+    const fruits = ['수박', '블루베리', '키위', '참외', '자두'];
+    for (const item of fruits) {
+      const ele_li = document.createElement('li');
+      ele_li.textContent = item;
+      //$fruit_ul.append(ele_li);
+      $fruit_ul.appendChild(ele_li);
+    }
+  </script>
+</body>
+</html>
