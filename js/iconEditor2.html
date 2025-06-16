@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table { border-collapse: collapse; margin-top: 5px; }
+    td { width: 15px; height: 15px; border: 1px solid gray; }
+  </style>
+</head>
+<body>
+  <h1>iconEditor2.html</h1>
+  <div id="editor"></div>
+  <script>
+    function makeElement(name, attributes) {
+      const node = document.createElement(name);
+
+      if (attributes) {
+        for (const item in attributes) {
+          if (attributes.hasOwnProperty(item)) {
+            node.setAttribute(item, attributes[item]);
+          }
+        }
+      }
+
+      return node;
+    }
+
+    function createIconEditor(target, nx, ny) {
+      const $inputColor = makeElement('input', {type: 'color'});
+      target.appendChild($inputColor);
+
+      const $inputButtonClear = makeElement('input', {type: 'button', value: '전체 삭제'});
+      target.appendChild($inputButtonClear);
+
+      const $table = makeElement('table');
+      target.appendChild($table);
+
+      for (let y = 0; y < ny; y++) {
+        const $tr = makeElement('tr');
+        $table.appendChild($tr);
+
+        for (let x = 0; x < nx; x++) {
+          const $td = makeElement('td');
+          $tr.appendChild($td);
+          $td.addEventListener('click', () => {
+            const color = $inputColor.value;
+            $td.style.backgroundColor = color;
+          });
+        }
+      }
+
+      $inputButtonClear.addEventListener('click', () => {
+        for (const $tr of $table.children) {
+          for (const $td of $tr.children) {
+            $td.style.backgroundColor = null;
+          }
+        }
+      });
+    }
+
+    window.addEventListener('load', () => {
+      const target = document.querySelector('#editor');
+      createIconEditor(target, 20, 20);
+    });
+  </script>
+</body>
+</html>
