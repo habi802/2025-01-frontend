@@ -46,7 +46,7 @@
           $tr.appendChild($td);
           $td.addEventListener('click', () => {
             const color = $inputColor.value;
-            $td.style.backgroundColor = color;
+            $td.style.backgroundColor = !$td.style.backgroundColor ? color : '';
           });
         }
       }
@@ -54,7 +54,7 @@
       $inputButtonClear.addEventListener('click', () => {
         for (const $tr of $table.children) {
           for (const $td of $tr.children) {
-            $td.style.backgroundColor = null;
+            $td.style.backgroundColor = '';
           }
         }
       });
